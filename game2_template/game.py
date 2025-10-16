@@ -59,8 +59,6 @@ def print_room_items(room):
     if len(room["items"]) > 0:
         item_names = list_of_items(room["items"])
         print("There is " + item_names + " here.")
-    else:
-
         print()
 
 
@@ -77,7 +75,8 @@ def print_inventory_items(items):
     
     if len(items) > 0:
         item_names = list_of_items(items)
-        print("You have: " + item_names)
+        print("You have " + item_names + ".")
+        print()
     else:
         print("You have no items.")
     
@@ -137,7 +136,7 @@ def print_room(room):
     print(room["description"])
     print()
     print_room_items(room)
-    print()
+    
     
 
 def exit_leads_to(exits, direction):
@@ -410,4 +409,6 @@ def main():
 # '__main__' is the name of the scope in which top-level code executes.
 # See https://docs.python.org/3.4/library/__main__.html for explanation
 if __name__ == "__main__":
+    import doctest
+    doctest.testmod(verbose=True)
     main()
